@@ -1,0 +1,54 @@
+			   Japanese Characters in Vim
+	       Written by Rory McCann <ebelular at gmail dot com>
+
+
+Contents of Japanese Keymapping package:
+	README
+	japanese-hiranga_utf8.vim
+	japanese-katakan_utf8.vim
+
+
+These keympas allow you to input Japanese characters (Hiragana and Katakana
+only, no Kanji yet) from within Vim by typing in their phonetic romanji
+equivalent.
+
+For more info on how to use key mappings, see the following help sections:
+	:help keymap
+	:help mbtye-keymap
+	:help mbyte.txt
+
+To use these keymappings places japanese-hiranga_utf8.vim and
+japanese-katakan_utf8.vim files in your keymap folder. To find out where that
+is look at
+	:echo $VIM.
+For more info see
+	:help $VIM
+
+You will have to change your 'encoding' to utf8. To see what your current
+'encoding' is set to run
+	:set encoding?
+To set your encoding to utf8, enter
+	:set encoding=utf-8
+For more info see
+	:help encoding.
+
+In order to start typing in japanese characters, you must enter
+	:set keymap=japanese-hiragana_utf8
+for hiragana, or
+	:set keymap=japanese-katakana_utf8
+for katakana. To turn off these keymaps and jsut start typing in the latin
+alphabet just enter
+	:set keymap=
+
+If you are going to be switching between the 3 then I suggest the following 3 mappings to make it easier.
+	:imap <C-H> <C-O>:set keymap=japanese-hiragana_utf8<ENTER>
+	:imap <C-K> <C-O>:set keymap=japanese-katakana_utf8<ENTER>
+	:imap <C-E> <C-O>:set keymap=<ENTER>
+If you do this then pressing CONTROL-H will switch it so you are entering hiragana etc.
+
+If you only see boxes while trying to type in japanese characters, your font
+probably doesn't support japanese characters. Try changing font.
+
+This keymap was written by Rory McCann. <ebelular at gmail dot com> My homepage
+is a http://rory.netsoc.com. The Unicode values for the character were taken
+from Wikipedia <http://en.wikipedia.org>, it's a great resource, check it out.
